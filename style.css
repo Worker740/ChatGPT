@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jura', sans-serif;
+}
+
+:root {
+    --bacgroundColorChat1: #2C3531;
+    --colorTextChat1: #D1E8E2;
+    --colorOfBorderChat1: #116466;
+    --accentChat2: #D9B08C;
+    --accentChat1: #FFCB9A;
+    --bacgroundImageChat1: url('./media/backgroundChat.jpg');
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1{
+    font-size: 3em;
+}
+
+.container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bacgroundColorChat1);
+    padding-inline: 5%;
+    padding-block: 1%;
+    border-radius: 5px;
+    color: var(--colorTextChat1);
+    box-shadow: var(--colorOfBorderChat1) 0 0 20px 10px;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+
+}
+
+.answer {
+    height: 90%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 3px solid var(--colorOfBorderChat1);
+    border-radius: 5px;
+    font-size: 1.2em;
+    background-image: var(--bacgroundImageChat1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+pre {
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.answer .answerData {
+    text-align: left;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: var(--accentChat1);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--colorOfBorderChat1);
+    border-radius: 5px;
+}
+
+.answer .questionData {
+    text-align: right;
+    padding: 5px;
+    color: var(--colorTextChat1);
+    margin-bottom: 5px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--colorOfBorderChat1);
+    border-radius: 5px;
+
+}
+
+.inputQuestion {
+    height: 15%;
+    display: flex;
+    padding: 5px;
+    border: 3px solid var(--colorOfBorderChat1);
+    border-radius: 5px;
+}
+
+.inputQuestion input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: var(--bacgroundColorChat1);
+    font-size: 1.5em;
+    color: var(--colorTextChat1);
+    outline: none;
+    caret-color: var(--accentChat1);
+}
+
+.inputQuestion input::placeholder {
+    color: var(--colorTextChat1);
+}
+
+.inputQuestion .send {
+
+    cursor: pointer;
+    padding-right: 5px;
+    object-fit: cover;
+    animation: moveBackAround 3s 1 ease;
+}
+
+.inputQuestion .send:hover {
+
+    animation: moveAround 0.2s 1 ease;
+    animation-fill-mode: forwards;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+    background-color: var(--colorOfBorderChat1);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bacgroundColorChat1);
+    margin: 10px;
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px var(--colorTextChat1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--colorTextChat1);
+}
+
+@keyframes moveAround {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes moveBackAround {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
