@@ -8,12 +8,10 @@ createAnswer(`Рад приветствовать Тебя пользовате�
 userQuestion.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
         createRequest();
-    } return
+    }
 })
 send.addEventListener('click', () => {
     createRequest();
-    console.log(userQuestion.value);
-
 })
 
 function createAnswer(answerText) {
